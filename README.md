@@ -47,49 +47,6 @@ Teamlid	Hoofd­taken Sprint 1	Hoofd­taken Sprint 2
 Kevin	Database-ontwerp, backend-PHP (aanmelden + ticket­verkoop)	Admin-login, data-overzichten, SEO-optimalisatie
 [Partnernaam]	Wireframes, frontend (Bootstrap 5.3)	Responsiveness-fixes, test­rapporten, content/afbeeldingen
 
-(Bij vakantie/uitval wisselen rollen ad-hoc.)
-
-1.1.5 Database-indeling (ERD)
-pgsql
-Copy
-Edit
-+----------------+     1           n  +-------------------+
-|   categories   |-------------------|     participants   |
-| id (PK)        |                   | id (PK)            |
-| name           |                   | category_id (FK)   |
-+----------------+                   | first_name         |
-                                     | last_name          |
-                                     | email              |
-                                     | street             |
-                                     | postcode           |
-                                     | city               |
-                                     | birthdate          |
-                                     | signup_code        |
-                                     | created_at         |
-                                     +--------------------+
-
-+----------------+     1           n  +-------------------+
-|   events       |-------------------|  tickets           |
-| id (PK)        |                   | id (PK)            |
-| title          |                   | event_id (FK)      |
-| date           |                   | first_name         |
-| start_time     |                   | last_name          |
-| location       |                   | email              |
-| description    |                   | street             |
-+----------------+                   | postcode           |
-                                     | city               |
-                                     | ticket_code        |
-                                     | created_at         |
-                                     +--------------------+
-
-+---------+
-| admins  |
-| id (PK) |
-| email   |
-| passhash|
-+---------+
-(Volledige ER-model uitdraw.io in map \doc\erd\.)
-
 2 – Testen
 2.1 Testrapport (Functioneel) – Sprint 1
 Handling tester	Verwacht resultaat	Werkelijk resultaat	OK?	Oplossing	Prio
