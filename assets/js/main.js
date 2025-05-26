@@ -1,4 +1,2 @@
-// Basic JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Main script loaded');
-});
+// Main JavaScript file - Add your JavaScript here
+console.log('Main JS loaded');

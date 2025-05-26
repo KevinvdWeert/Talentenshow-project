@@ -1,8 +1,7 @@
+</main>
     <footer>
-        <div class="container">
-            <p>&copy; <?php echo date('Y'); ?> My Project</p>
-        </div>
+        <p>&copy; <?php echo date("Y"); ?> Talent Show</p>
     </footer>
-    <script src="/assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

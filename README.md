@@ -60,3 +60,50 @@ Deze site is ontwikkeld in het kader van een schoolproject waarbij PHP, PDO, MyS
 ```bash
 git clone https://github.com/gebruikersnaam/talentenshow-website.git
 cd talentenshow-website
+```
+2. **Database aanmaken**
+   - Maak een MySQL database aan, bijvoorbeeld `talentenshow`.
+   - Importeer het script `database/scripts/init.sql` in je database.
+   - Pas indien nodig de databasegegevens aan in `database/connection.php`.
+
+3. **Start de webserver**
+   - Zorg dat Apache en MySQL draaien (XAMPP/WAMP).
+   - Navigeer naar `http://localhost/Web/Talentenshow project/` in je browser.
+
+4. **Structuur**
+   - Zie `docs/project structure.txt` voor uitleg over de mappen en bestanden.
+
+---
+
+## 🗂️ Database
+
+De database is opgebouwd uit verschillende tabellen die met elkaar in relatie staan. Belangrijke tabellen zijn:
+
+- **gebruikers**: Voor admin-accounts
+- **deelnemers**: Informatie over deelnemers aan de talentenshow
+- **categorieen**: Categorieën voor deelnemers (bijv. zang, dans)
+- **voorstellingen**: Geplande voorstellingen met deelnemers en tijdstippen
+- **kaartjes**: Reserveringen gemaakt door bezoekers
+
+Zie `database/talentenshow_schema.sql` voor het databasemodel.
+
+---
+
+## ⏳ To Do
+
+- [ ] Bezoekers kunnen hun reserveringen inzien en annuleren
+- [ ] Deelnemers kunnen hun gegevens en voorstellingen beheren
+- [ ] Uitgebreidere statistieken en rapportages voor beheerders
+- [ ] Verbeterde foutafhandeling en validatie
+- [ ] Meertalige ondersteuning (NL/EN)
+- [ ] Optimalisatie voor zoekmachines (SEO)
+
+---
+
+## 👤 Auteurs
+
+- **Jouw Naam** - *Ontwikkelaar* - [jouwprofiel](https://github.com/jouwgebruikersnaam)
+- **Medewerker 2** - *Rol* - [profiel2](https://github.com/gebruiker2)
+- **Medewerker 3** - *Rol* - [profiel3](https://github.com/gebruiker3)
+
+Zie `docs/credits.md` voor meer informatie over bijdragers en gebruikte bronnen.
