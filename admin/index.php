@@ -27,33 +27,27 @@ if (isset($_GET['logout'])) {
     exit();
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="/Web/Talentenshow project/assets/css/style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Admin Dashboard</h1>
-        <?php if (!$loggedIn): ?>
-            <?= $message ?>
-            <form method="post" style="max-width:350px;">
-                <label>Username</label>
-                <input type="text" name="username" required>
-                <label>Password</label>
-                <input type="password" name="password" required>
-                <input type="submit" value="Login">
-            </form>
-        <?php else: ?>
-            <p>Welcome, <strong><?= htmlspecialchars($_SESSION['admin']) ?></strong>! <a href="?logout=1">Logout</a></p>
-            <ul>
-                <li><a href="/Web/Talentenshow project/pages/participants.php">Participants Overview</a></li>
-                <li><a href="/Web/Talentenshow project/pages/visitors.php">Visitors Overview</a></li>
-            </ul>
-        <?php endif; ?>
-    </div>
-</body>
-</html>
+<div class="container my-5">
+    <h1 class="mb-4">Admin Dashboard</h1>
+    <?php if (!$loggedIn): ?>
+        <?= $message ?>
+        <form method="post" class="bg-white p-4 rounded shadow-sm" style="max-width:350px;">
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" name="username" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    <?php else: ?>
+        <p>Welcome, <strong><?= htmlspecialchars($_SESSION['admin']) ?></strong>! <a href="?logout=1" class="btn btn-link">Logout</a></p>
+        <ul class="list-group mb-4" style="max-width:400px;">
+            <li class="list-group-item"><a href="/Web/Talentenshow project/pages/participants.php">Participants Overview</a></li>
+            <li class="list-group-item"><a href="/Web/Talentenshow project/pages/visitors.php">Visitors Overview</a></li>
+        </ul>
+    <?php endif; ?>
+</div>
+<?php include '../includes/footer.php'; ?>

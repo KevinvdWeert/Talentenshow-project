@@ -23,17 +23,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <section>
-    <h2>Book Your Tickets</h2>
-    <?php echo $message; ?>
-    <form method="post" autocomplete="off">
-        <label>Name*</label>
-        <input type="text" name="name" required>
-        <label>Address</label>
-        <input type="text" name="address">
-        <label>Email*</label>
-        <input type="email" name="email" required>
-        <label>Number of Tickets*</label>
-        <input type="number" name="ticket_count" min="1" max="10" required>
-        <input type="submit" value="Book Tickets">
+    <h2 class="mb-4">Book Your Tickets</h2>
+    <?php if ($message) echo '<div class="mb-3">'.$message.'</div>'; ?>
+    <form method="post" autocomplete="off" class="bg-white p-4 rounded shadow-sm">
+        <div class="mb-3">
+            <label class="form-label">Name*</label>
+            <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Address</label>
+            <input type="text" name="address" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email*</label>
+            <input type="email" name="email" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Number of Tickets*</label>
+            <input type="number" name="ticket_count" min="1" max="10" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Book Tickets</button>
     </form>
 </section>
+<?php include '../includes/footer.php'; ?>

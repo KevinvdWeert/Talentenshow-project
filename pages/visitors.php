@@ -10,11 +10,12 @@ $visitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $total = $pdo->query("SELECT COUNT(*) FROM visitors")->fetchColumn();
 ?>
 <section>
-    <h2>Visitors Overview</h2>
+    <h2 class="mb-4">Visitors Overview</h2>
     <?php if (count($visitors) === 0): ?>
         <p>No bookings yet.</p>
     <?php else: ?>
-        <table>
+        <div class="table-responsive">
+        <table class="table table-bordered table-striped">
             <tr><th>Name</th><th>Email</th><th>Tickets</th></tr>
             <?php foreach ($visitors as $v): ?>
                 <tr>
@@ -24,6 +25,8 @@ $total = $pdo->query("SELECT COUNT(*) FROM visitors")->fetchColumn();
                 </tr>
             <?php endforeach; ?>
         </table>
+        </div>
     <?php endif; ?>
-    <p><strong>Total bookings:</strong> <?= $total ?></p>
+    <p class="fw-bold">Total bookings: <?= $total ?></p>
 </section>
+<?php include '../includes/footer.php'; ?>
