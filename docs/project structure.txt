@@ -59,3 +59,11 @@ project-root/
 
 7. index.php
    - Purpose: Serves as the public-facing homepage and acts as the entry point for routing requests.
+
+
+Extra admin Functions:
+1. Manage users
+2. Show IP adres of users
+3. Show countdown till event based on country of residence
+4. Show users until 25 a page
+5. make accounts active and not active
