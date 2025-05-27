@@ -4,50 +4,59 @@ include '../includes/header.php';
 include_once __DIR__ . '/../includes/db_connect.php';
 include_once __DIR__ . '/../includes/functions.php';
 
-$loggedIn = isset($_SESSION['admin']);
-$message = '';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$loggedIn) {
-    $username = sanitizeInput($_POST['username'] ?? '');
-    $password = $_POST['password'] ?? '';
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
-    $stmt->execute([$username]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($user && verifyPassword($password, $user['password'])) {
-        $_SESSION['admin'] = $username;
-        $loggedIn = true;
-    } else {
-        $message = '<div class="error">Invalid credentials.</div>';
-    }
-}
-
-if (isset($_GET['logout'])) {
-    session_destroy();
-    header("Location: index.php");
-    exit();
-}
+// Admin dashboard content (no login form)
 ?>
 <div class="container my-5">
     <h1 class="mb-4">Admin Dashboard</h1>
-    <?php if (!$loggedIn): ?>
-        <?= $message ?>
-        <form method="post" class="bg-white p-4 rounded shadow-sm" style="max-width:350px;">
-            <div class="mb-3">
-                <label class="form-label">Username</label>
-                <input type="text" name="username" class="form-control" required>
+    <div class="row mb-4">
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100 shadow-sm border-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Participants Overview</h5>
+                    <p class="card-text">View and manage all registered participants.</p>
+                    <a href="/Web/Talentenshow project/pages/participants.php" class="btn btn-primary">Go to Participants</a>
+                </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" required>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100 shadow-sm border-success">
+                <div class="card-body">
+                    <h5 class="card-title">Visitors Overview</h5>
+                    <p class="card-text">See all ticket bookings and visitor details.</p>
+                    <a href="/Web/Talentenshow project/pages/visitors.php" class="btn btn-success">Go to Visitors</a>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>
-    <?php else: ?>
-        <p>Welcome, <strong><?= htmlspecialchars($_SESSION['admin']) ?></strong>! <a href="?logout=1" class="btn btn-link">Logout</a></p>
-        <ul class="list-group mb-4" style="max-width:400px;">
-            <li class="list-group-item"><a href="/Web/Talentenshow project/pages/participants.php">Participants Overview</a></li>
-            <li class="list-group-item"><a href="/Web/Talentenshow project/pages/visitors.php">Visitors Overview</a></li>
-        </ul>
-    <?php endif; ?>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100 shadow-sm border-info">
+                <div class="card-body">
+                    <h5 class="card-title">Manage Registrations</h5>
+                    <p class="card-text">Approve, edit, or remove participant registrations.</p>
+                    <a href="/Web/Talentenshow project/pages/registrations.php" class="btn btn-info text-white">Manage Registrations</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100 shadow-sm border-warning">
+                <div class="card-body">
+                    <h5 class="card-title">Manage Bookings</h5>
+                    <p class="card-text">View and manage ticket bookings.</p>
+                    <a href="/Web/Talentenshow project/pages/bookings.php" class="btn btn-warning text-white">Manage Bookings</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100 shadow-sm border-secondary">
+                <div class="card-body">
+                    <h5 class="card-title">Settings</h5>
+                    <p class="card-text">Update event settings and admin options.</p>
+                    <a href="/Web/Talentenshow project/pages/settings.php" class="btn btn-secondary">Settings</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-info mt-4">
+        <strong>Tip:</strong> Use the dashboard to manage all aspects of the Talent Show 2025. For security, make sure to log out when finished.
+    </div>
 </div>
 <?php include '../includes/footer.php'; ?>

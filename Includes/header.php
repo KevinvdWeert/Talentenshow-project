@@ -58,7 +58,7 @@
                                 <a class="nav-link" href="/Web/Talentenshow project/pages/visitors.php">Visitors</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/Web/Talentenshow project/admin/index.php">Admin</a>
+                                <a class="nav-link" href="/Web/Talentenshow project/login.php">Login</a>
                             </li>
                         </ul>
                     </div>
