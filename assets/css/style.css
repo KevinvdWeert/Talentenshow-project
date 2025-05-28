@@ -1,0 +1,135 @@
+/* General Reset & Base */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8f9fa;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #0d6efd;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+a:hover, a:focus {
+    color: #0a58ca;
+    text-decoration: underline;
+}
+
+/* Navbar */
+.navbar {
+    background: #212529 !important;
+}
+.navbar .navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+.navbar .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
+.navbar .nav-link.active, .navbar .nav-link:hover {
+    color: #ffc107 !important;
+}
+
+/* Hero Section */
+section.py-5.text-center.bg-dark {
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative;
+}
+section.py-5 .container {
+    background: rgba(0,0,0,0.6);
+    border-radius: 1rem;
+}
+
+/* Buttons */
+.btn {
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: box-shadow 0.2s, background 0.2s;
+}
+.btn-success {
+    background: #198754;
+    border: none;
+}
+.btn-success:hover {
+    background: #157347;
+}
+.btn-warning {
+    background: #ffc107;
+    color: #222;
+    border: none;
+}
+.btn-warning:hover {
+    background: #e0a800;
+    color: #fff;
+}
+.btn-primary {
+    background: #0d6efd;
+    border: none;
+}
+.btn-primary:hover {
+    background: #0a58ca;
+}
+
+/* Cards */
+.card {
+    border-radius: 1rem;
+}
+.card .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.card .btn {
+    margin-top: 1rem;
+}
+
+/* Features */
+.p-4.bg-light {
+    background: #f8f9fa !important;
+    border: 1px solid #e9ecef;
+}
+
+/* Table Styles */
+.table {
+    background: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+.table th, .table td {
+    vertical-align: middle !important;
+}
+.table-danger {
+    background: #ffe5e5 !important;
+}
+
+/* Alerts */
+.alert {
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Footer */
+footer.main-footer {
+    background: #212529;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 767px) {
+    .display-3 {
+        font-size: 2.2rem;
+    }
+    .container.py-5 {
+        padding: 2rem 1rem !important;
+    }
+    .card .btn {
+        margin-top: 0.5rem;
+    }
+}

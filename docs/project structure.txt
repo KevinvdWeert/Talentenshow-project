@@ -1,6 +1,6 @@
 project-root/
 │
-├── admin/
+├── dashboard/
 │   ├── index.php           # Admin dashboard
 │
 ├── assets/
