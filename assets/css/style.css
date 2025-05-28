@@ -20,18 +20,48 @@ a:hover, a:focus {
 /* Navbar */
 .navbar {
     background: #212529 !important;
+    transition: background 0.4s cubic-bezier(0.4,0,0.2,1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 .navbar .navbar-brand {
     font-size: 1.5rem;
     letter-spacing: 1px;
+    transition: color 0.3s;
 }
 .navbar .nav-link {
     color: #fff !important;
     font-weight: 500;
     margin-right: 0.5rem;
+    position: relative;
+    transition: color 0.3s;
 }
-.navbar .nav-link.active, .navbar .nav-link:hover {
+.navbar .nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffc107;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
     color: #ffc107 !important;
+    text-decoration: none !important; 
+}
+.navbar .nav-link.active::after,
+.navbar .nav-link:hover::after {
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    
+    
+}
+.navbar .nav-link.active::after,
+.navbar .nav-link:hover::after {
+    width: 100%;
 }
 
 /* Hero Section */
