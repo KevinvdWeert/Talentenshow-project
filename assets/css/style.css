@@ -1,6 +1,6 @@
 /* General Reset & Base */
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: #f8f9fa;
     color: #222;
     margin: 0;
@@ -99,29 +99,37 @@ section.py-5 .container {
     font-weight: 500;
     border-radius: 0.5rem;
     transition: box-shadow 0.2s, background 0.2s;
+    text-decoration: none !important;
 }
 .btn-success {
     background: #198754;
     border: none;
+    text-decoration: none !important;
 }
 .btn-success:hover {
-    background: #157347;
+    background: #0e5c37;
+    text-decoration: none !important;
 }
 .btn-warning {
     background: #ffc107;
     color: #222;
     border: none;
+    text-decoration: none !important;
+    
 }
 .btn-warning:hover {
     background: #e0a800;
     color: #fff;
+    text-decoration: none !important;
 }
 .btn-primary {
     background: #0d6efd;
     border: none;
-}
+    text-decoration: none !important;
+}   
 .btn-primary:hover {
-    background: #0a58ca;
+    background: #0246ac;
+    text-decoration: none !important;
 }
 
 /* Cards */
@@ -135,6 +143,7 @@ section.py-5 .container {
 .card .btn {
     margin-top: 1rem;
 }
+
 
 /* Features */
 .p-4.bg-light {

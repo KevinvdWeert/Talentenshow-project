@@ -3,6 +3,7 @@ session_start();
 include 'includes/header.php';
 ?>
 
+
 <!-- Hero Section -->
 <section class="py-5 text-center bg-dark text-white" style="background: url('assets/img/main-image.jpg') center/cover no-repeat;">
     <div class="container py-5" style="background: rgba(0,0,0,0.6); border-radius: 1rem;">
