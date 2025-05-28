@@ -27,6 +27,30 @@ a:hover, a:focus {
     font-size: 1.5rem;
     letter-spacing: 1px;
     transition: color 0.3s;
+    text-decoration: none !important;
+    color: #fff !important;
+    position: relative;
+}
+.navbar .navbar-brand::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffc107;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+    color: #ffc107 !important;
+    text-decoration: none !important;
+}
+.navbar .navbar-brand:hover::after,
+.navbar .navbar-brand:focus::after {
+    width: 100%;
+    left: 0;
 }
 .navbar .nav-link {
     color: #fff !important;
@@ -53,15 +77,9 @@ a:hover, a:focus {
 }
 .navbar .nav-link.active::after,
 .navbar .nav-link:hover::after {
-    width: 0;
-    left: 0;
-    bottom: -10px;
-    
-    
-}
-.navbar .nav-link.active::after,
-.navbar .nav-link:hover::after {
     width: 100%;
+    left: 0;
+    /* bottom: -4px; */
 }
 
 /* Hero Section */
