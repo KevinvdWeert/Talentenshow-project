@@ -4,8 +4,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     header("Location: ../login.php");
     exit();
 }
-include __DIR__ . '/../includes/header.php';
-include_once __DIR__ . '/../includes/db_connect.php';
+include '../includes/header.php';
+include_once '../includes/db_connect.php';
 include_once __DIR__ . '/../includes/functions.php';
 
 // Admin dashboard content

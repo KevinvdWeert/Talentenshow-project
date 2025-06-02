@@ -82,6 +82,13 @@ a:hover, a:focus {
     /* bottom: -4px; */
 }
 
+/* Navbar scrolled style */
+.navbar.navbar-scrolled {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 /* Hero Section */
 section.py-5.text-center.bg-dark {
     background-size: cover !important;
@@ -176,6 +183,17 @@ footer.main-footer {
     color: #fff;
     font-size: 1rem;
     letter-spacing: 1px;
+}
+
+/* Lazy Loading */
+img.lazy {
+    opacity: 0.5; /* Optional: Fades in as it loads */
+    transition: opacity 0.5s ease;
+}
+
+img.lazy:not([src]) {
+    /* Optional: Placeholder style */
+    filter: blur(5px);
 }
 
 /* Responsive Tweaks */

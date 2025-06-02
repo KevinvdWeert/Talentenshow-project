@@ -1,7 +1,7 @@
 <?php
 session_start();
 include __DIR__ . '/includes/header.php';
-include_once __DIR__ . '/includes/db_connect.php';
+include_once 'database/db-connection.php';
 include_once __DIR__ . '/includes/functions.php';
 
 $message = '';

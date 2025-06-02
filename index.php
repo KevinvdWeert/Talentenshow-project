@@ -1,8 +1,8 @@
 <?php
 session_start();
 include 'includes/header.php';
+include_once 'database/db-connection.php';
 ?>
-
 
 <!-- Hero Section -->
 <section class="py-5 text-center bg-dark text-white" style="background: url('assets/img/main-image.jpg') center/cover no-repeat;">
@@ -34,7 +34,13 @@ include 'includes/header.php';
             </p>
         </div>
         <div class="col-md-6 text-center">
-            <img src="assets/img/main-image.jpg" alt="Festival Crowd" class="img-fluid rounded shadow-lg" style="max-height:350px;object-fit:cover;">
+            <img
+                src="assets/img/festival-image.jpg"
+                alt="Festival Crowd: A vibrant audience enjoying the Talent Festival 2025 with lights, music, and excitement"
+                class="img-fluid rounded shadow-lg"
+                style="max-height:350px;object-fit:cover;filter:none;background:none;"
+                loading="lazy"
+            >
         </div>
     </div>
 </section>
@@ -65,7 +71,7 @@ include 'includes/header.php';
                 <div class="card-body text-center">
                     <h5 class="card-title text-primary">Line-up & Info</h5>
                     <p class="card-text">Curious who's performing? Check out the line-up and get all the info you need for the festival.</p>
-                    <a href="participants.php" class="btn btn-primary">View Line-up</a>
+                    <a href="lineup.php" class="btn btn-primary">View Line-up</a>
                 </div>
             </div>
         </div>
@@ -103,3 +109,5 @@ include 'includes/header.php';
 </section>
 
 <?php include 'includes/footer.php'; ?>
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/script.js"></script>

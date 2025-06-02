@@ -7,7 +7,7 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/Web/Talentenshow-project/assets/css/style.css"> <!-- Font Awesome is loaded above -->
+    <link rel="stylesheet" href="/Web/Talentenshow-project/assets/css/style.css">
     <link rel="icon" type="image/png" href="/Web/Talentenshow-project/assets/img/show-icon.jpg">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -38,7 +38,7 @@
                                 <a class="nav-link" href="booking.php">Tickets</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="participants.php">Participants</a>
+                                <a class="nav-link" href="lineup.php">Line-up</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="visitors.php">Visitors</a>

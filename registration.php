@@ -1,7 +1,7 @@
 <?php
 include 'includes/header.php';
-include_once __DIR__ . '/includes/db_connect.php';
-include_once __DIR__ . '/includes/functions.php';
+include_once 'database/db-connection.php';
+include_once 'includes/functions.php';
 
 $message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <link rel="stylesheet" href="/Web/Talentenshow-project/assets/css/style.css">
-<script src="/Web/Talentenshow-project/assets/js/main.js"></script>
+<script src="assets/js/script.js"></script>
 <section class="container my-5">
     <h2 class="mb-4">Participant Registration</h2>
     <?php if ($message) echo '<div class="mb-3">'.$message.'</div>'; ?>

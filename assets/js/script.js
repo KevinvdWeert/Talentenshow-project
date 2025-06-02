@@ -1,5 +1,29 @@
-// Animate navbar: slide down on page load and highlight on scroll
+// Lazy loading for sections
+document.addEventListener("DOMContentLoaded", function() {
+    let lazySections = [].slice.call(document.querySelectorAll("section.lazy"));
 
+    if ("IntersectionObserver" in window) {
+        let sectionObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    sectionObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        lazySections.forEach(function(section) {
+            sectionObserver.observe(section);
+        });
+    } else {
+        // Fallback: show all sections immediately
+        lazySections.forEach(function(section) {
+            section.classList.add("visible");
+        });
+    }
+});
+
+// Animate navbar: slide down on page load and highlight on scroll
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector('.navbar');
     if (!navbar) return;

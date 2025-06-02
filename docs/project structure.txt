@@ -27,9 +27,9 @@ project-root/
 │   ├── home.php            # Homepage content
 │   ├── registration.php    # Participant registration page
 │   ├── booking.php         # Ticket booking page
-│   ├── participants.php    # Participants overview page (Admin)
-│   └── visitors.php        # Visitors overview page (Admin)
+│   ├── visitors.php        # Visitors overview page (Admin)
 │
+├── lineup.php              # Festival line-up page (public)
 ├── docs/                   # (Your existing docs go here)
 │
 └── index.php               # Homepage (entry point)
