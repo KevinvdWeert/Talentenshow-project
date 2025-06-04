@@ -1,6 +1,10 @@
 <?php
 session_start();
-include __DIR__ . '/includes/header.php';
+if (isset($_SESSION['role'])) {
+    include 'includes/header_loggedin.php';
+} else {
+    include 'includes/header.php';
+}
 include_once 'database/db-connection.php';
 include_once __DIR__ . '/includes/functions.php';
 
@@ -30,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($visitor) {
             $_SESSION['role'] = 'visitor';
             $_SESSION['visitor_email'] = $email;
-            header("Location: pages/visitor_dashboard.php");
+            header("Location: dashboard/visitor_dashboard.php");
             exit();
         } else {
             $message = '<div class="alert alert-danger">No booking found for this email.</div>';
@@ -43,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($participant) {
             $_SESSION['role'] = 'participant';
             $_SESSION['registration_code'] = $code;
-            header("Location: pages/participant_dashboard.php");
+            header("Location: dashboard/participant_dashboard.php");
             exit();
         } else {
             $message = '<div class="alert alert-danger">Invalid registration code.</div>';

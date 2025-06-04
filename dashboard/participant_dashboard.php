@@ -5,7 +5,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'participant') {
     exit();
 }
 include '../includes/header.php';
-include_once __DIR__ . '/../includes/db_connect.php';
+include_once '../database/db-connection.php';
 
 $code = $_SESSION['registration_code'];
 $stmt = $pdo->prepare("SELECT * FROM participants WHERE registration_code = ?");
@@ -39,4 +39,5 @@ $participant = $stmt->fetch(PDO::FETCH_ASSOC);
         </ul>
     </div>
     <a href="../login.php?logout=1" class="btn btn-secondary w-100">Logout</a>
+</section>
 <?php include '../includes/footer.php'; ?>

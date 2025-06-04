@@ -28,39 +28,35 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="registration.php">Register</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="booking.php">Tickets</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="lineup.php">Line-up</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="visitors.php">Visitors</a>
-                            </li>
-                            <?php if (isset($_SESSION['role'])): ?>
-                                <?php if ($_SESSION['role'] === 'admin'): ?>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="dashboard/index.php">Dashboard</a>
-                                    </li>
-                                <?php elseif ($_SESSION['role'] === 'visitor'): ?>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="dashboard/visitor_dashboard.php">Dashboard</a>
-                                    </li>
-                                <?php elseif ($_SESSION['role'] === 'participant'): ?>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="dashboard/participant_dashboard.php">Dashboard</a>
-                                    </li>
-                                <?php endif; ?>
+                            <?php
+                            $onDashboard = (
+                                strpos($_SERVER['PHP_SELF'], 'dashboard/index.php') !== false ||
+                                strpos($_SERVER['PHP_SELF'], 'dashboard/visitor_dashboard.php') !== false ||
+                                strpos($_SERVER['PHP_SELF'], 'dashboard/participant_dashboard.php') !== false
+                            );
+                            if (isset($_SESSION['role']) && $onDashboard): ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.php">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="dashboard/index.php">Dashboard</a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="login.php?logout=1">Logout</a>
                                 </li>
                             <?php else: ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.php">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="registration.php">Register</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="booking.php">Tickets</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="lineup.php">Line-up</a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="login.php">Login</a>
                                 </li>
