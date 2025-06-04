@@ -5,16 +5,16 @@ include_once 'database/db-connection.php';
 ?>
 
 <!-- Hero Section -->
-<section class="py-5 text-center bg-dark text-white" style="background: url('assets/img/main-image.jpg') center/cover no-repeat;">
-    <div class="container py-5" style="background: rgba(0,0,0,0.6); border-radius: 1rem;">
+<section class="py-5 text-white text-center bg-dark" style="background: url('assets/img/main-image.jpg') center/cover no-repeat;">
+    <div class="container py-5 rounded" style="background-color: rgba(0, 0, 0, 0.6);">
         <h1 class="display-3 fw-bold mb-3">🎉 Talent Festival 2025 🎶</h1>
-        <p class="lead mb-4 fs-4">
+        <p class="lead fs-4 mb-4">
             Experience the ultimate night of music, dance, and creativity!<br>
             Join as an <span class="fw-bold text-warning">Artist</span>, <span class="fw-bold text-info">DJ</span>, or enjoy as a <span class="fw-bold text-success">Visitor</span>!
         </p>
         <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-            <a href="booking.php" class="btn btn-success btn-lg px-4 shadow">🎟️ Buy Tickets</a>
-            <a href="registration.php" class="btn btn-warning btn-lg px-4 shadow">🌟 Register as Artist/DJ</a>
+            <a href="booking.php" class="btn btn-success btn-lg shadow px-4">🎟️ Buy Tickets</a>
+            <a href="registration.php" class="btn btn-warning btn-lg shadow px-4">🌟 Register as Artist/DJ</a>
         </div>
     </div>
 </section>
@@ -34,13 +34,11 @@ include_once 'database/db-connection.php';
             </p>
         </div>
         <div class="col-md-6 text-center">
-            <img
-                src="assets/img/festival-image.jpg"
-                alt="Festival Crowd: A vibrant audience enjoying the Talent Festival 2025 with lights, music, and excitement"
-                class="img-fluid rounded shadow-lg"
-                style="max-height:350px;object-fit:cover;filter:none;background:none;"
-                loading="lazy"
-            >
+            <img src="assets/img/festival-image.jpg" 
+                 alt="Festival Crowd: A vibrant audience enjoying the Talent Festival 2025 with lights, music, and excitement"
+                 class="img-fluid rounded shadow-lg"
+                 style="max-height: 350px; object-fit: cover;"
+                 loading="lazy">
         </div>
     </div>
 </section>
@@ -83,25 +81,25 @@ include_once 'database/db-connection.php';
     <div class="row text-center">
         <div class="col-md-3 mb-3">
             <div class="p-4 bg-light rounded shadow-sm h-100">
-                <span class="fs-1 text-warning">🎤</span>
+                <div class="fs-1 text-warning">🎤</div>
                 <h6 class="mt-2">Live Performances</h6>
             </div>
         </div>
         <div class="col-md-3 mb-3">
             <div class="p-4 bg-light rounded shadow-sm h-100">
-                <span class="fs-1 text-info">🎧</span>
+                <div class="fs-1 text-info">🎧</div>
                 <h6 class="mt-2">DJ Sets</h6>
             </div>
         </div>
         <div class="col-md-3 mb-3">
             <div class="p-4 bg-light rounded shadow-sm h-100">
-                <span class="fs-1 text-success">🍔</span>
+                <div class="fs-1 text-success">🍔</div>
                 <h6 class="mt-2">Food Trucks</h6>
             </div>
         </div>
         <div class="col-md-3 mb-3">
             <div class="p-4 bg-light rounded shadow-sm h-100">
-                <span class="fs-1 text-danger">🎆</span>
+                <div class="fs-1 text-danger">🎆</div>
                 <h6 class="mt-2">Afterparty</h6>
             </div>
         </div>
