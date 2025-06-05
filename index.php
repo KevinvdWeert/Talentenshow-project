@@ -1,10 +1,11 @@
 <?php
+// Start session and include header and database connection
 session_start();
-include 'Includes/header.php';
-include_once 'database/db-connection.php';
+include './Includes/header.php';
+include_once './database/db-connection.php';
 ?>
 
-<!-- Hero Section -->
+<!-- Hero Section: Main festival banner -->
 <section class="py-5 text-white text-center bg-primary" style="background: url('assets/img/main-image.jpg') center/cover no-repeat;">
     <div class="container py-5 rounded" style="background-color: rgba(0, 0, 0, 0.6);">
         <h1 class="display-3 fw-bold mb-3">🎉 Talent Festival 2025 🎶</h1>
@@ -19,7 +20,7 @@ include_once 'database/db-connection.php';
     </div>
 </section>
 
-<!-- Festival Info Section -->
+<!-- Festival Info Section: Date, time, location, and description -->
 <section class="container my-5">
     <div class="row align-items-center">
         <div class="col-md-6 mb-4 mb-md-0">
@@ -43,7 +44,7 @@ include_once 'database/db-connection.php';
     </div>
 </section>
 
-<!-- Call to Action Cards -->
+<!-- Call to Action Cards: Tickets, registration, line-up -->
 <section class="container mb-5">
     <div class="row g-4">
         <div class="col-md-4">
@@ -76,7 +77,7 @@ include_once 'database/db-connection.php';
     </div>
 </section>
 
-<!-- Festival Features -->
+<!-- Festival Features: Icons for features -->
 <section class="container mb-5">
     <div class="row text-center">
         <div class="col-md-3 mb-3">
@@ -106,4 +107,4 @@ include_once 'database/db-connection.php';
     </div>
 </section>
 
-<?php include 'Includes/footer.php'; ?>
+<?php include './Includes/footer.php'; ?>

@@ -1,31 +1,37 @@
 <?php
+// Start session and handle logout
 session_start();
 if (isset($_GET['logout'])) {
     session_destroy();
-    header("Location: ../login.php");
+    header("Location: login.php");
     exit();
 }
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ../login.php");
-    exit();
-}
-include '../Includes/header.php';
-include_once '../database/db-connection.php';
-include_once '../Includes/functions.php';
 
-// Get total tickets and visitors
+// Restrict access to admin users only
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header("Location: login.php");
+    exit();
+}
+
+// Include database connection and utility functions
+include_once 'database/db-connection.php';
+include_once 'Includes/functions.php';
+include 'Includes/header.php';
+
+// Get total tickets sold and total visitors
 $totalTickets = $pdo->query("SELECT SUM(ticket_count) FROM visitors")->fetchColumn() ?? 0;
 $totalVisitors = $pdo->query("SELECT COUNT(*) FROM visitors")->fetchColumn() ?? 0;
 
-// Get all participants with credentials
+// Fetch all participants for the overview table
 $participants = $pdo->query("SELECT name, email, registration_code, category, age FROM participants ORDER BY name ASC")->fetchAll(PDO::FETCH_ASSOC);
 
-// Countdown calculation
+// Calculate countdown to event (7 days from now)
 $eventDate = (new DateTime())->modify('+7 days');
 $now = new DateTime();
 $interval = $now->diff($eventDate);
 ?>
 <section class="container my-5">
+    <!-- Dashboard summary cards -->
     <h2 class="mb-4">Admin Dashboard</h2>
     <div class="row mb-4">
         <div class="col-md-4 mb-3">
@@ -55,6 +61,7 @@ $interval = $now->diff($eventDate);
         </div>
     </div>
 
+    <!-- Participants overview table -->
     <h3 class="mt-5 mb-3">Participants Overview</h3>
     <?php if (empty($participants)): ?>
         <div class="alert alert-info">No participants registered yet.</div>
@@ -85,4 +92,4 @@ $interval = $now->diff($eventDate);
         </div>
     <?php endif; ?>
 </section>
-<?php include '../Includes/footer.php'; ?>
+<?php include 'Includes/footer.php'; ?>

@@ -1,24 +1,33 @@
 <?php
+// Start session and handle logout
 session_start();
 if (isset($_GET['logout'])) {
     session_destroy();
-    header("Location: ../login.php");
+    header("Location: login.php");
     exit();
 }
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'participant') {
-    header("Location: ../login.php");
-    exit();
-}
-include '../Includes/header.php';
-include_once '../database/db-connection.php';
 
+// Restrict access to participants only
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'participant') {
+    header("Location: login.php");
+    exit();
+}
+
+// Include database connection
+include_once 'database/db-connection.php';
+
+// Fetch participant data by registration code
 $code = $_SESSION['registration_code'];
 $stmt = $pdo->prepare("SELECT * FROM participants WHERE registration_code = ?");
 $stmt->execute([$code]);
 $participant = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// Include header
+include 'Includes/header.php';
 ?>
 <section class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
     <div class="w-100" style="max-width:600px;">
+        <!-- Participant info card -->
         <h2 class="mb-4 text-center">Participant Information</h2>
         <div class="card shadow-sm mb-4">
             <div class="card-body">
@@ -37,6 +46,7 @@ $participant = $stmt->fetch(PDO::FETCH_ASSOC);
                 </div>
             </div>
         </div>
+        <!-- Event instructions and requirements -->
         <div class="alert alert-info mb-4">
             <strong>What to bring:</strong>
             <ul class="mb-2">
@@ -53,7 +63,7 @@ $participant = $stmt->fetch(PDO::FETCH_ASSOC);
                 <li>Follow the event schedule and instructions from staff</li>
             </ul>
         </div>
-        <a href="../login.php?logout=1" class="btn btn-secondary w-100">Logout</a>
+        <a href="login.php?logout=1" class="btn btn-secondary w-100">Logout</a>
     </div>
 </section>
-<?php include '../Includes/footer.php'; ?>
+<?php include 'Includes/footer.php'; ?>

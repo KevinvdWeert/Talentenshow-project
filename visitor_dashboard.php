@@ -1,28 +1,35 @@
 <?php
+// Start session and handle logout
 session_start();
 if (isset($_GET['logout'])) {
     session_destroy();
-    header("Location: ../login.php");
+    header("Location: login.php");
     exit();
 }
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'visitor') {
-    header("Location: ../login.php");
-    exit();
-}
-include '../Includes/header.php';
-include_once '../database/db-connection.php';
 
+// Restrict access to visitors only
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'visitor') {
+    header("Location: login.php");
+    exit();
+}
+
+// Include database connection
+include_once 'database/db-connection.php';
+
+// Fetch visitor data by email
 $email = $_SESSION['visitor_email'];
 $stmt = $pdo->prepare("SELECT * FROM visitors WHERE email = ?");
 $stmt->execute([$email]);
 $visitor = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Countdown calculation: event is always 7 days from now
+// Calculate countdown to event (7 days from now)
 $eventDate = (new DateTime())->modify('+7 days');
 $now = new DateTime();
 $interval = $now->diff($eventDate);
 ?>
+<?php include 'Includes/header.php'; ?>
 <section class="container my-5" style="max-width:500px;">
+    <!-- Ticket overview for visitor -->
     <h2 class="mb-4">Your Ticket Overview</h2>
     <div class="alert alert-info mb-3">
         <strong>Days left until the event:</strong> <?= $interval->days ?> days
@@ -40,6 +47,6 @@ $interval = $now->diff($eventDate);
         <strong>Transaction Document:</strong><br>
         Thank you for your booking! Please show this page or your confirmation email at the entrance.
     </div>
-    <a href="../login.php?logout=1" class="btn btn-secondary w-100">Logout</a>
+    <a href="login.php?logout=1" class="btn btn-secondary w-100">Logout</a>
 </section>
-<?php include '../Includes/footer.php'; ?>
+<?php include 'Includes/footer.php'; ?>
