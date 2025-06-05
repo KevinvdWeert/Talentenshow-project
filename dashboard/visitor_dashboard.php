@@ -1,10 +1,15 @@
 <?php
 session_start();
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header("Location: ../login.php");
+    exit();
+}
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'visitor') {
     header("Location: ../login.php");
     exit();
 }
-include '../includes/header.php';
+include '../includes/headerloggedin.php';
 include_once __DIR__ . '/../includes/db_connect.php';
 
 $email = $_SESSION['visitor_email'];

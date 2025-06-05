@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS participants (
     registered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Visitors (ticket buyers) table
+-- Visitors table
 CREATE TABLE IF NOT EXISTS visitors (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -29,3 +29,8 @@ CREATE TABLE IF NOT EXISTS visitors (
     ticket_count INT NOT NULL,
     ordered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Insert default admin user (username: admin, password: admin)
+DELETE FROM users WHERE username = 'admin';
+INSERT INTO users (username, password) VALUES
+('admin', '$2b$12$O5nY94WSKD5YbKYBmInPa.JKyCzoH4tF0itr57gW3UI.I79J.lNK6'); -- password: admin

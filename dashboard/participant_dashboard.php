@@ -1,10 +1,15 @@
 <?php
 session_start();
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header("Location: ../login.php");
+    exit();
+}
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'participant') {
     header("Location: ../login.php");
     exit();
 }
-include '../includes/header.php';
+include '../includes/headerloggedin.php';
 include_once '../database/db-connection.php';
 
 $code = $_SESSION['registration_code'];
