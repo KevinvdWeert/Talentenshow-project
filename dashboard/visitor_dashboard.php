@@ -9,15 +9,16 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'visitor') {
     header("Location: ../login.php");
     exit();
 }
-include '../includes/headerloggedin.php';
-include_once __DIR__ . '/../includes/db_connect.php';
+include '../Includes/header.php';
+include_once '../database/db-connection.php';
 
 $email = $_SESSION['visitor_email'];
 $stmt = $pdo->prepare("SELECT * FROM visitors WHERE email = ?");
 $stmt->execute([$email]);
 $visitor = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$eventDate = new DateTime('2025-06-05 19:00:00');
+// Countdown calculation: event is always 7 days from now
+$eventDate = (new DateTime())->modify('+7 days');
 $now = new DateTime();
 $interval = $now->diff($eventDate);
 ?>
@@ -40,4 +41,5 @@ $interval = $now->diff($eventDate);
         Thank you for your booking! Please show this page or your confirmation email at the entrance.
     </div>
     <a href="../login.php?logout=1" class="btn btn-secondary w-100">Logout</a>
-<?php include '../includes/footer.php'; ?>
+</section>
+<?php include '../Includes/footer.php'; ?>

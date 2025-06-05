@@ -54,6 +54,7 @@ function getTotalVisitors($pdo) {
 }
 
 // Get participants by category
+// $category can be: singing, dancing, dj, band, comedy, magic, theater, other
 function getParticipantsByCategory($pdo, $category) {
     $stmt = $pdo->prepare("SELECT name, age, email FROM participants WHERE category = ? ORDER BY age DESC");
     $stmt->execute([$category]);

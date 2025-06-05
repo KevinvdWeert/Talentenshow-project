@@ -1,9 +1,7 @@
 <?php
-include 'includes/header.php';
+include 'Includes/header.php';
 include_once 'database/db-connection.php';
 ?>
-<link rel="stylesheet" href="/Web/Talentenshow-project/assets/css/style.css">
-<script src="assets/js/script.js"></script>
 <section class="my-5">
     <div class="row align-items-center">
         <div class="col-md-7">
@@ -19,4 +17,4 @@ include_once 'database/db-connection.php';
         </div>
     </div>
 </section>
-<?php include 'includes/footer.php'; ?>
+<?php include 'Includes/footer.php'; ?>

@@ -1,11 +1,11 @@
 <?php
 session_start();
-include 'includes/header.php';
+include 'Includes/header.php';
 include_once 'database/db-connection.php';
 ?>
 
 <!-- Hero Section -->
-<section class="py-5 text-white text-center bg-dark" style="background: url('assets/img/main-image.jpg') center/cover no-repeat;">
+<section class="py-5 text-white text-center bg-primary" style="background: url('assets/img/main-image.jpg') center/cover no-repeat;">
     <div class="container py-5 rounded" style="background-color: rgba(0, 0, 0, 0.6);">
         <h1 class="display-3 fw-bold mb-3">🎉 Talent Festival 2025 🎶</h1>
         <p class="lead fs-4 mb-4">
@@ -25,7 +25,7 @@ include_once 'database/db-connection.php';
         <div class="col-md-6 mb-4 mb-md-0">
             <h2 class="fw-bold mb-3">About the Festival</h2>
             <ul class="list-group mb-3">
-                <li class="list-group-item"><strong>Date:</strong> June 5, 2025</li>
+                <li class="list-group-item"><strong>Date:</strong> June 12, 2025</li>
                 <li class="list-group-item"><strong>Time:</strong> 19:00 - 02:00</li>
                 <li class="list-group-item"><strong>Location:</strong> City Park Festival Grounds, Main Street 123, YourTown</li>
             </ul>
@@ -106,6 +106,4 @@ include_once 'database/db-connection.php';
     </div>
 </section>
 
-<?php include 'includes/footer.php'; ?>
-<link rel="stylesheet" href="assets/css/style.css">
-<script src="assets/js/script.js"></script>
+<?php include 'Includes/footer.php'; ?>

@@ -1,8 +1,8 @@
 <?php
 session_start();
-include 'includes/header.php';
+include 'Includes/header.php';
 include_once 'database/db-connection.php';
-include_once __DIR__ . '/includes/functions.php';
+include_once 'Includes/functions.php';
 
 $message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -23,10 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<link rel="stylesheet" href="/Web/Talentenshow-project/assets/css/style.css">
-<script src="assets/js/script.js"></script>
-
-<!-- Booking Section -->
 <section class="container my-5">
     <h2 class="mb-4">Book Your Tickets</h2>
     <?php if ($message) echo '<div class="mb-3">'.$message.'</div>'; ?>
@@ -51,4 +47,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 </section>
 
-<?php include 'includes/footer.php'; ?>
+<?php include 'Includes/footer.php'; ?>

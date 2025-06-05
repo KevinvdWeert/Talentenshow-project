@@ -8,7 +8,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark bg-success rounded shadow-sm">
                 <div class="container-fluid">
-                    <a class="navbar-brand fw-800" href="../dashboard/index.php">
+                    <a class="navbar-brand fw-800" href="/Talentenshow-project/dashboard/index.php">
                         <span class="me-2">🌟</span>Talent Festival Dashboard
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -17,13 +17,13 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="../dashboard/index.php">Dashboard</a>
+                                <a class="nav-link" href="/Talentenshow-project/dashboard/index.php">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../index.php">Home</a>
+                                <a class="nav-link" href="/Talentenshow-project/index.php">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="?logout=1">Logout</a>
+                                <a class="nav-link" href="/Talentenshow-project/dashboard/index.php?logout=1">Logout</a>
                             </li>
                         </ul>
                     </div>

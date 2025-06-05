@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS participants (
     artist_display_name VARCHAR(100) NOT NULL,
     address VARCHAR(255),
     email VARCHAR(100) NOT NULL,
-    category ENUM('singing', 'dancing', 'other') NOT NULL,
+    category ENUM('singing', 'dancing', 'dj', 'band', 'comedy', 'magic', 'theater', 'other') NOT NULL,
     age INT NOT NULL,
     performance_time DATETIME DEFAULT NULL,
     registered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

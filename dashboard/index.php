@@ -9,9 +9,9 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     header("Location: ../login.php");
     exit();
 }
-include '../includes/headerloggedin.php';
+include '../Includes/header.php';
 include_once '../database/db-connection.php';
-include_once __DIR__ . '/../includes/functions.php';
+include_once '../Includes/functions.php';
 
 // Get total tickets and visitors
 $totalTickets = $pdo->query("SELECT SUM(ticket_count) FROM visitors")->fetchColumn() ?? 0;
@@ -21,7 +21,7 @@ $totalVisitors = $pdo->query("SELECT COUNT(*) FROM visitors")->fetchColumn() ?? 
 $participants = $pdo->query("SELECT name, email, registration_code, category, age FROM participants ORDER BY name ASC")->fetchAll(PDO::FETCH_ASSOC);
 
 // Countdown calculation
-$eventDate = new DateTime('2025-06-05 19:00:00');
+$eventDate = (new DateTime())->modify('+7 days');
 $now = new DateTime();
 $interval = $now->diff($eventDate);
 ?>
@@ -49,7 +49,7 @@ $interval = $now->diff($eventDate);
                 <div class="card-body text-center">
                     <h5 class="card-title text-warning">Countdown to Festival</h5>
                     <p class="display-6 fw-bold mb-0"><?= $interval->days ?> days</p>
-                    <small class="text-muted">until June 5, 2025</small>
+                    <small class="text-muted">until <?= $eventDate->format('F j, Y') ?></small>
                 </div>
             </div>
         </div>
@@ -85,4 +85,4 @@ $interval = $now->diff($eventDate);
         </div>
     <?php endif; ?>
 </section>
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+<?php include '../Includes/footer.php'; ?>

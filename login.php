@@ -1,12 +1,8 @@
 <?php
 session_start();
-if (isset($_SESSION['role'])) {
-    include 'includes/header_loggedin.php';
-} else {
-    include 'includes/header.php';
-}
+include 'Includes/header.php';
 include_once 'database/db-connection.php';
-include_once __DIR__ . '/includes/functions.php';
+include_once 'Includes/functions.php';
 
 $message = '';
 $role = $_POST['role'] ?? '';
@@ -111,4 +107,4 @@ if (isset($_GET['logout'])) {
     toggleLoginFields(document.querySelector('select[name="role"]').value);
     </script>
 </div>
-<?php include __DIR__ . '/includes/footer.php'; ?>
+<?php include 'Includes/footer.php'; ?>
