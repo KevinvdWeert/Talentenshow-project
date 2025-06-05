@@ -1,69 +1,94 @@
 project-root/
 │
-├── dashboard/
-│   ├── index.php           # Admin dashboard
-│
 ├── assets/
 │   ├── css/
 │   │   └── style.css       # Main CSS file
 │   ├── js/
-│   │   └── main.js         # Main JavaScript file
-│   ├── images/             # (Empty directory for images)
-│   └── fonts/              # (Empty directory for fonts)
+│   │   └── script.js       # Main JavaScript file
+│   ├── images/             # (Image assets)
+│   └── fonts/              # (Font assets)
 │
 ├── database/
 │   ├── scripts/
 │   │   └── init.sql        # Database initialization script
-│   ├── backups/            # (Empty directory for backups)
-│   └── connection.php      # Database connection (PDO)
+│   ├── backups/            # (Database backups)
+│   ├── connection.php      # Database connection (PDO)
+│   └── db-connection.php   # (Alias/compatibility for includes)
 │
-├── includes/
-│   ├── header.php          # Standard header
-│   ├── footer.php          # Standard footer
-│   ├── functions.php       # Common functions
-│   └── db_connect.php      # Database connection file
+├── Includes/
+│   ├── header.php          # Standard header (navigation, branding)
+│   ├── footer.php          # Standard footer (copyright)
+│   ├── functions.php       # Common reusable PHP functions
 │
-├── pages/
-│   ├── home.php            # Homepage content
-│   ├── registration.php    # Participant registration page
-│   ├── booking.php         # Ticket booking page
-│   ├── visitors.php        # Visitors overview page (Admin)
+├── docs/                   # Project documentation and notes
+│   ├── README.md
+│   └── project structure.txt
 │
+├── admin_dashboard.php     # Admin dashboard (user management, IP display, countdown, pagination, activation)
+├── booking.php             # Ticket booking page
+├── contact.php             # Contact page
+├── home.php                # Homepage content (optional, see index.php)
+├── index.php               # Homepage (entry point)
 ├── lineup.php              # Festival line-up page (public)
-├── docs/                   # (Your existing docs go here)
+├── login.php               # Login page (admin, visitor, participant)
+├── participant_dashboard.php # Dashboard for participants
+├── registration.php        # Participant registration page
+├── visitor_dashboard.php   # Dashboard for visitors
 │
-└── index.php               # Homepage (entry point)
+└── robots.txt, sitemap.xml # SEO and crawler files
 
-=== DETAILED EXPLANATION ===
-1. admin/
-   - Purpose: Isolates admin-related code for security and management of the website.
+=== DIRECTORY & FILE EXPLANATION ===
 
-2. assets/
-   - Purpose: Centralizes static files for easy maintenance and improved performance.
+assets/
+- Static files: CSS, JavaScript, images, and fonts.
 
-3. database/
-   - Purpose: Manages all database-related operations.
-   - Key Files:
-     - connection.php: Stores database connection logic using PDO.
-     - init.sql: Database initialization script to set up tables.
-     - backups/: Regular backups to prevent data loss.
+database/
+- Database scripts, backups, and PDO connection logic.
 
-4. includes/
-   - Purpose: Promotes code reusability (DRY principle) and contains configuration files.
+Includes/
+- Shared PHP includes for headers, footers, and functions.
 
-5. pages/
-    - Purpose: Contains the main content pages of the website.
+docs/
+- Documentation and project notes.
 
-6. docs/
-   - Purpose: Stores project documentation and notes.
+admin_dashboard.php
+- Admin dashboard for managing users, viewing IPs, event countdowns, paginated user lists, and account activation.
 
-7. index.php
-   - Purpose: Serves as the public-facing homepage and acts as the entry point for routing requests.
+booking.php
+- Ticket booking page for visitors.
 
+contact.php
+- Contact form page.
 
-Extra admin Functions:
-1. Manage users
-2. Show IP adres of users
+home.php / index.php
+- Homepage content and main entry point.
+
+lineup.php
+- Festival line-up page (public).
+
+login.php
+- Login page for admin, visitors, and participants.
+
+participant_dashboard.php
+- Dashboard for participants after login.
+
+registration.php
+- Participant registration page.
+
+visitor_dashboard.php
+- Dashboard for visitors after login.
+
+robots.txt, sitemap.xml
+- SEO and crawler configuration.
+
+=== ADMIN DASHBOARD FUNCTIONS ===
+1. Manage users (CRUD operations)
+2. Show IP address of users
 3. Show countdown till event based on country of residence
-4. Show users until 25 a page
-5. make accounts active and not active
+4. Paginate users (25 per page)
+5. Activate/deactivate user accounts
+
+=== HOW TO EXTEND ===
+- Add new features/pages as new PHP files in the root.
+- Add new assets to /assets/
+- Update database logic in /database/
