@@ -1,17 +1,7 @@
 <?php
 include 'includes/header.php';
 ?>
- <header class="main-header mb-4">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded shadow-sm">
-                <div class="container-fluid">
-                    <a class="navbar-brand fw-800" href="index.php">
-                        <span class="me-2">🎤</span>Talent Show 2025
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    
+
 <section class="container my-5">
     <div class="row justify-content-center">
         <div class="col-md-8">

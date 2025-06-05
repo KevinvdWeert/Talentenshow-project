@@ -56,10 +56,13 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="lineup.php">Line-up</a>
-                                </li>
+                                </li
+                               <li class="nav-item">
+                                    <a class="nav-link" href="contact.php">Contact</a>
                                 <li class="nav-item">
                                     <a class="nav-link" href="login.php">Login</a>
                                 </li>
+                                
                             <?php endif; ?>
                         </ul>
                     </div>
