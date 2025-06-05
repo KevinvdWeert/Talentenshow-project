@@ -13,14 +13,17 @@ include 'Includes/header.php';
                 class="p-4 border rounded bg-light shadow"
             >
                 <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" id="name" name="name" class="form-control" required placeholder="Your name">
+                </div>
+                <div class="mb-3">
                     <label for="email" class="form-label">Your Email</label>
-                    <input type="email" name="email" id="email" class="form-control" required placeholder="your@email.com">
+                    <input type="email" id="email" name="email" class="form-control" required placeholder="your@email.com">
                 </div>
                 <div class="mb-3">
                     <label for="message" class="form-label">Your Message</label>
-                    <textarea name="message" id="message" rows="5" class="form-control" required placeholder="Type your message here..."></textarea>
+                    <textarea id="message" name="message" rows="5" class="form-control" required placeholder="Type your message here..."></textarea>
                 </div>
-                <!-- You can add other form fields here if needed -->
                 <div class="d-grid">
                     <button type="submit" class="btn btn-primary">Send</button>
                 </div>
