@@ -7,7 +7,7 @@
     <title>Talent Show 2025 | The Ultimate Talent Competition Event</title>
     <!-- SEO Meta Tags -->
     <meta name="description" content="Join the Talent Show 2025, the ultimate competition for singers, dancers, DJs, bands, comedians, magicians, and more. Register or book your tickets now!">
-    <meta name="keywords" content="Talent Show, Competition, Singing, Dancing, DJ, Band, Comedy, Magic, Theater, Tickets, Register, 2025">
+    <meta name="keywords" content="Talent Show, Competition, Singing, Dancing, DJ, Band, Comedy, Magic, Theater, Tickets, Register, 2025, Live Music, Local Talent">
     <meta name="author" content="Talent Show 2025 Team">
     <meta name="robots" content="index, follow">
     <!-- Open Graph / Facebook -->
@@ -21,6 +21,9 @@
     <meta name="twitter:title" content="Talent Show 2025 | The Ultimate Talent Competition Event">
     <meta name="twitter:description" content="Register as a participant or book your seats for the Talent Show 2025.">
     <meta name="twitter:image" content="./assets/img/show-icon.jpg">
+    <meta name="twitter:creator" content="@TalentShow2025">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourdomain.com/index.php">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->

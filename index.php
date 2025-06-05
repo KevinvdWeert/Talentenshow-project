@@ -20,6 +20,45 @@ include_once './database/db-connection.php';
     </div>
 </section>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Talent Festival 2025",
+  "startDate": "2025-06-12T19:00:00",
+  "endDate": "2025-06-13T02:00:00",
+  "location": {
+    "@type": "Place",
+    "name": "City Park Festival Grounds",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Main Street 123",
+      "addressLocality": "YourTown",
+      "addressRegion": "YourRegion",
+      "postalCode": "12345",
+      "addressCountry": "YourCountry"
+    }
+  },
+  "description": "Experience the ultimate night of music, dance, and creativity! Join as an Artist, DJ, or enjoy as a Visitor!",
+  "image": "https://yourdomain.com/assets/img/main-image.jpg",
+  "url": "https://yourdomain.com/",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://yourdomain.com/booking.php",
+    "priceCurrency": "USD",
+    "price": "20",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2024-01-01T00:00:00"
+  },
+  "performer": [
+    {
+      "@type": "PerformingGroup",
+      "name": "Various Artists and DJs"
+    }
+  ]
+}
+</script>
+
 <!-- Festival Info Section: Date, time, location, and description -->
 <section class="container my-5">
     <div class="row align-items-center">

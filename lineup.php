@@ -56,4 +56,25 @@ $participants = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     <?php endif; ?>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    <?php
+    $count = 0;
+    foreach ($participants as $i => $row):
+      $count++;
+    ?>
+    {
+      "@type": "ListItem",
+      "position": <?= $i + 1 ?>,
+      "url": "https://yourdomain.com/lineup.php#artist<?= $i + 1 ?>"
+    }<?php if($count < count($participants)) echo ","; ?>
+    <?php endforeach; ?>
+  ]
+}
+</script>
+
 <?php include './Includes/footer.php'; ?>

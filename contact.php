@@ -36,12 +36,44 @@ include 'Includes/header.php';
                 $email = htmlspecialchars($_POST['email']);
                 $message = htmlspecialchars($_POST['message']);
 
-                // Hier kun je bijv. mailen of opslaan in database
-                echo "<div class='alert alert-success mt-4'>Thanks, <strong>$name</strong>! We received your message.</div>";
+                $to = 'your-email@example.com'; // Replace with your email address
+                $subject = 'New Contact Form Submission';
+                $body = "Name: $name\nEmail: $email\nMessage:\n$message";
+                $headers = "From: $email\r\n";
+                $headers .= "Reply-To: $email\r\n";
+
+                if (mail($to, $subject, $body, $headers)) {
+                    echo "<div class='alert alert-success mt-4'>Thanks, <strong>$name</strong>! We received your message.</div>";
+                } else {
+                    echo "<div class='alert alert-danger mt-4'>Sorry, there was an error sending your message. Please try again later.</div>";
+                }
             }
             ?>
         </div>
     </div>
 </section>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Talent Show 2025",
+    "description": "Contact the Talent Show 2025 team for inquiries, registration, and ticket information.",
+    "url": "https://yourdomain.com/contact.php",
+    "potentialAction": {
+        "@type": "CommunicateAction",
+        "name": "Contact Us",
+        "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://yourdomain.com/contact.php",
+            "actionPlatform": [
+                "http://schema.org/DesktopWebPlatform",
+                "http://schema.org/MobileWebPlatform"
+            ],
+            "httpMethod": "POST"
+        }
+    }
+}
+</script>
 
 <?php include 'Includes/footer.php'; ?>
