@@ -13,22 +13,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Talent Show 2025 | The Ultimate Talent Competition Event">
     <meta property="og:description" content="Register as a participant or book your seats for the Talent Show 2025.">
-    <meta property="og:image" content="./assets/img/show-icon.jpg">
-    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:image" content="https://duurzaamheid.info/assets/img/show-icon.jpg">
+    <meta property="og:url" content="https://duurzaamheid.info/">
     <meta property="og:type" content="website">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Talent Show 2025 | The Ultimate Talent Competition Event">
     <meta name="twitter:description" content="Register as a participant or book your seats for the Talent Show 2025.">
-    <meta name="twitter:image" content="./assets/img/show-icon.jpg">
+    <meta name="twitter:image" content="https://duurzaamheid.info/assets/img/show-icon.jpg">
     <meta name="twitter:creator" content="@TalentShow2025">
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://yourdomain.com/index.php">
+    <link rel="canonical" href="https://duurzaamheid.info/index.php">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="icon" type="image/png" href="./assets/img/show-icon.jpg">
+    <link rel="icon" type="image/png" href="https://duurzaamheid.info/assets/img/show-icon.jpg">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">

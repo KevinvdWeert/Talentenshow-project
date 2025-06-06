@@ -40,11 +40,11 @@ include_once './database/db-connection.php';
     }
   },
   "description": "Experience the ultimate night of music, dance, and creativity! Join as an Artist, DJ, or enjoy as a Visitor!",
-  "image": "https://yourdomain.com/assets/img/main-image.jpg",
-  "url": "https://yourdomain.com/",
+  "image": "https://duurzaamheid.info/assets/img/main-image.jpg",
+  "url": "https://duurzaamheid.info/",
   "offers": {
     "@type": "Offer",
-    "url": "https://yourdomain.com/booking.php",
+    "url": "https://duurzaamheid.info/booking.php",
     "priceCurrency": "USD",
     "price": "20",
     "availability": "https://schema.org/InStock",

@@ -56,7 +56,7 @@ project-root/
 2. Set up your web server (e.g., XAMPP) and place the project in the web root.
 3. Import the database using `database/scripts/init.sql`.
 4. Configure database credentials in `database/connection.php` and/or `includes/db_connect.php`.
-5. Access the site via `index.php` for public pages or `dashboard/index.php` for admin.
+5. Access the site via `https://duurzaamheid.info/index.php` for public pages or `https://duurzaamheid.info/dashboard/index.php` for admin.
 
 ## Documentation
 

@@ -70,7 +70,7 @@ $participants = $stmt->fetchAll(PDO::FETCH_ASSOC);
     {
       "@type": "ListItem",
       "position": <?= $i + 1 ?>,
-      "url": "https://yourdomain.com/lineup.php#artist<?= $i + 1 ?>"
+      "url": "https://duurzaamheid.info/lineup.php#artist<?= $i + 1 ?>"
     }<?php if($count < count($participants)) echo ","; ?>
     <?php endforeach; ?>
   ]
